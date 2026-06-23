@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyParking — NYC Smart Parking Finder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- CENTRAL APPLICATION CONTAINER CARD -->
+    <div class="app-card">
+        
+        <div class="app-header-wrapper">
+            <header>
+                <h1 id="app-logo">EasyParking</h1>
+            </header>
+            
+            <h4 id="subhdr">NYC Parking Space Finder</h4>
+
+            <header class="search-container">
+                <div class="input-wrapper" style="position: relative; flex: 1; display: flex; align-items: center;">
+                    <input type="text" id="search-input" placeholder="Enter NYC destination or neighborhood..." required>
+                    <button id="clear-search-btn" class="clear-btn hidden" aria-label="Clear search input">&times;</button>
+                </div>
+                <button id="search-button">Search</button>
+            </header>
+        </div>
+
+        <main id="map">
+            <!-- Your Local Viewport Workspace Workaround Image Placeholder -->
+            <img 
+                src="img/easyparkUIimage.jpg" 
+                alt="Vehicle Parallel Parking on a Street" 
+                class="center-placeholder" 
+                id="welcomeImage"
+            >
+
+            <!-- Slide-Up Details Panel Sheet (Now cleanly anchored inside the card map layer) -->
+            <section id="details-panel" class="details-panel hidden">
+                <div class="panel-header">
+                    <button id="close-panel-btn" aria-label="Close panel">&times;</button>
+                    <h2 id="location-title">Parking Location</h2>
+                </div>
+                <div class="panel-content">
+                    <!-- Note: Hidden row layout styling bypasses price indicators automatically -->
+                    <p class="info-row price-bypass-row">
+                    
+                        <!--<strong>Price/Rate:</strong> <span id="parking-price">-</span></p>-->
+                    
+                    <p class="info-row"><strong>Hours:</strong> <span id="parking-hours">-</span></p>
+                    <div id="asp-warning-container" class="warning-box hidden">
+                        <strong>⚠️ ASP Restriction:</strong> <span id="asp-details">-</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+       <footer class="controls-container">
+           <div id="footerbtn">
+                <button id="btn-paid" class="toggle-btn active" data-mode="paid">Paid Indoor Parking</button>
+                <button id="btn-street" class="toggle-btn" data-mode="street">Find Street Parking</button>
+           </div>
+
+            <div class="app-copyright">
+                &copy; 2026 j3zglobalitsolutions.com. All rights reserved.
+            </div>
+      </footer>
+
+    </div>
+    
+    <!-- Local UI Controller Script Hook -->
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
